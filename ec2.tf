@@ -13,6 +13,7 @@ resource "aws_instance" "wordpresswebserver" {
   vpc_security_group_ids = [aws_security_group.deham14-sg.id]
   key_name               = "vockey"
   subnet_id              = aws_subnet.public_subnet_1.id
+  user_data              = file("userdata.sh")
 
   tags = {
     Name = "WordpressWebserver"
